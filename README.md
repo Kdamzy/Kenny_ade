@@ -1,2 +1,2 @@
-# Kenny_ade
+doing hard thing# Kenny_ade
 collaboration
