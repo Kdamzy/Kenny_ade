@@ -1,2 +1,1 @@
-# Kenny_ade
-collaboration
+kenny is a drama queen
