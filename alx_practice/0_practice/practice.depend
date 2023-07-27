@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1690459090 source:c:\users\hp\desktop\alx practice\practice\practice_1.c
+	<stdio.h>
+
+1690461012 source:c:\users\hp\desktop\alx practice\practice\practice_2.c
+	<stdio.h>
+
+1690459090 source:c:\users\hp\desktop\alx practice\practice\addition.c
+	<stdio.h>
+
