@@ -1,7 +1,7 @@
 # function to check if a number is positive or negative
 read number from users; num
-is_ poitive () {
-	num = 1
+is_positive() {
+let num = 1
 	if [num < 0]; then
 		echo "number num is negative"
 	else
