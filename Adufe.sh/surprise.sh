@@ -37,7 +37,7 @@ local name=$1
 # Read the name from user
 echo
 
-echo "Welcome, Star boy! Enter your name:"
+echo "Welcome, Star boy! please Enter your name:"
 
 echo
 
