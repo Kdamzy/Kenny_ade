@@ -4,18 +4,14 @@ is_prime() {
 	echo "Welcome Adeyemi, check if a number is prime"
 	read -p "please enter a number:" num
 
-	for ((i=2; i*i <=num; i++)); do
+	for ((i=2; i<=num/2; i++)); do
 		if [ $((num % i)) -eq 0 ]; then 
-		 num=0
-            break  # No need to check further if it's not prime
+		 	echo "number is not a prime number"
+			exit
         fi
     done
 
-    if [ $num -eq 1 ]; then
-        echo "number is a prime number"
-    else
-        echo "number is not a prime number"
-    fi
+    echo "number is a prime number"
 
 }
 #call the function to check if the number is prime
