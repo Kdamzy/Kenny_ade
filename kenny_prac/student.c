@@ -1,35 +1,68 @@
 #include <stdio.h>
 #include "record.h"
 
+enum Entering_data
+{
+    WELCOME,
+    ENTER_NAME,
+    ENTER_REG_NUMBER,
+    ENTER_SCORES,
+};
+
 /**
  * add_student - Adds a new student to the student record.
  * @students: Array of student records.
- * @num_students: Pointer to the number of students
+ * @num_students: Pointer to the number of students.
  */
 void add_student(struct Student students[], int *num_students)
 {
     int i;
+    enum Entering_data data_entered = WELCOME;
+    struct Student new_student;
 
     if (*num_students < MAX_STUDENTS)
     {
-        struct Student new_student;
-        printf("Welcome to Skinoayan International College\n");
-        printf("Please enter the student name: ");
-        scanf("%s", new_student.name);
-        printf("Please enter the student registration number: ");
-        scanf("%d", &new_student.reg_number); 
-        printf("Please enter the scores for 5 subjects: ");
-        for (i = 0; i < 5; i++)
+        while (data_entered != ENTER_SCORES)
         {
-            scanf("%f", &new_student.scores[i]);
+            switch (data_entered)
+            {
+            case WELCOME:
+                printf("Welcome to Skinoayan International College\n");
+                data_entered = ENTER_NAME;
+                break;
+            case ENTER_NAME:
+                printf("Please enter the student name:\n ");
+                scanf("%s", new_student.name);
+                data_entered = ENTER_REG_NUMBER;
+                break;
+            case ENTER_REG_NUMBER:
+                printf("Please enter the student registration number: \n");
+                scanf("%d", &new_student.reg_number);
+                data_entered = ENTER_SCORES;
+                break;
+            default:
+                break;
+            }
         }
+        printf("Please enter the scores for the subjects:\n");
+        printf("Mathematics: ");
+        scanf("%f", &new_student.scores[0]);
+        printf("English: ");
+        scanf("%f", &new_student.scores[1]);
+        printf("Biology: ");
+        scanf("%f", &new_student.scores[2]);
+        printf("Physics: ");
+        scanf("%f", &new_student.scores[3]);
+        printf("Chemistry: ");
+        scanf("%f", &new_student.scores[4]);
+
         students[*num_students] = new_student;
         (*num_students)++;
-        printf("You have sucessfully added this student!\n");
+        printf("You have successfully added and recorded the score of this student!\n");
     }
     else
     {
-        printf("oops, Maximum number of students reached!\n");
+        printf("Oops, Maximum number of students reached!\n");
     }
 }
 
